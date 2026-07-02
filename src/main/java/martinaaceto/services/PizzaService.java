@@ -22,4 +22,12 @@ public class PizzaService {
     public List<Pizza> findAll() {
         return this.pizzaRepository.findAll();
     }
+
+    public List<Pizza> findByPrezzoMinoreDi(double prezzo) {
+        return this.pizzaRepository.findByPrezzoLessThan(prezzo);
+    }
+
+    public List<Pizza> findByCalorieMinoriDi(int calorie) {
+        return this.pizzaRepository.findByCalorieLessThan(calorie);
+    }
 }

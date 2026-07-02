@@ -12,7 +12,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
+@ToString(exclude = "toppings")
 public class Pizza {
 
     @Id
@@ -31,7 +31,7 @@ public class Pizza {
     // una pizza può avere più topping e lo stesso topping può essere su più pizze
     // quindi ManyToMany
     // Hibernate creerà in automatico tre tabelle (pizze, topping e pizza_toppings che sarà quella di collegamento
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     @JoinTable(
             name = "pizza_toppings",
             joinColumns = @JoinColumn(name = "pizza_id"),
